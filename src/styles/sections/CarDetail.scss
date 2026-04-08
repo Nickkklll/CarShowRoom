@@ -158,12 +158,11 @@
   }
 
   @media(max-width:767px) {
-    margin-top: -10px;
+   margin-top: 0px;
+    padding: 10px 30px;
   }
 
-  @media(max-width:450px) {
-    margin-top: 10px;
-  }
+ 
 }
 
 .reviews__block {
@@ -559,6 +558,10 @@
     object-position: 100% 33%;
     pointer-events: none;
     display: block;
+    @media(max-width:450px){
+      object-position: 60% 33%;
+    }
+    
   }
 
   &__arrow {

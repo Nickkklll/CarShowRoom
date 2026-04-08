@@ -22,6 +22,11 @@ export function flyToDetail(car, setSelectedCar) {
 
   // ── Клон картинки ──
   const clone = document.createElement("img");
+  let slideBp = '100% 27%';
+
+  if(innerWidth<=450){
+    slideBp = '60% 33%'
+  }
   clone.classList.add("clone");
   clone.src = imgEl.src;
   Object.assign(clone.style, {
@@ -31,7 +36,7 @@ export function flyToDetail(car, setSelectedCar) {
     width:          sourceImgRect.width  + "px",
     height:         sourceImgRect.height + "px",
     objectFit:      "cover",
-    objectPosition: "100% 27%",
+    objectPosition: slideBp,
     borderRadius:   "16px 16px 0 0",
     zIndex:         "9999",
     transition:     "none",
@@ -115,8 +120,18 @@ export function flyToDetail(car, setSelectedCar) {
     if(window.innerWidth<=1499){
       bp=10;
     } 
+ 
     if(window.innerWidth<=1040){
       bp=110;
+    } 
+       if(window.innerWidth<=870){
+      bp=105;
+    } 
+       if(window.innerWidth<=724){
+      bp=100;
+    } 
+      if(window.innerWidth<=620){
+      bp=95;
     } 
     if(window.innerWidth<=560){
       bp=90;
@@ -139,7 +154,7 @@ export function flyToDetail(car, setSelectedCar) {
       setTimeout(() => {
         
         
-    clone.remove();
+    // clone.remove();
         
       }, 500);
 
@@ -172,6 +187,11 @@ export function flyBack(car, onBack) {
 
 
       const clone = document.createElement("img");
+      let slideBp = '100% 27%';
+
+  if(innerWidth<=450){
+    slideBp = '60% 33%'
+  }
       clone.classList.add("clone");
       clone.src = targetImg.src;
       Object.assign(clone.style, {
@@ -181,7 +201,7 @@ export function flyBack(car, onBack) {
         width: sliderRect.width + "px",
         height: sliderRect.height + "px",
         objectFit: "cover",
-        objectPosition: "100% 27%",
+        objectPosition: slideBp,
         borderRadius: "0px",
         zIndex: "9999",
         transition: "none",
@@ -212,10 +232,22 @@ export function flyBack(car, onBack) {
         }
 
         const TRANSITION = "all 0.8s ease-in-out";
-
+        let bp = 78
+         if(innerWidth<=760){
+          bp = 95;
+        }
+        if(innerWidth<=560){
+          bp = 85;
+        }
+        if(innerWidth<=450){
+          bp = 88;
+        }
+        if(innerWidth<=400){
+          bp = 93.5;
+        }
         raf2(() => {
           clone.style.transition = TRANSITION;
-          clone.style.top = (finalImgRect.top + 78) + "px";
+          clone.style.top = (finalImgRect.top + bp) + "px";
           clone.style.left = finalImgRect.left + "px";
           clone.style.width = finalImgRect.width + "px";
           clone.style.height = finalImgRect.height + "px";
