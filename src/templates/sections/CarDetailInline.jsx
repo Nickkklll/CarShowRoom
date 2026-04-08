@@ -155,7 +155,7 @@ if (slider) {
   return (
     <div className="car-detail">
       <button onClick={handleBack} className="back-btn" ref={backBtnRef}>
-        <span>←</span> Назад
+        <span>←</span> Back
       </button>
       <div className="car-detail__layout">
         <div className="car-detail__info glass-plate" ref={infoRef}>
@@ -232,7 +232,7 @@ if (slider) {
                                   <button
                                     className="car-review__delete"
                                     onClick={() => handleDelete(id)}
-                                  >Видалити</button>
+                                  >Delete</button>
                                 )}
                               </div>
                             )}
