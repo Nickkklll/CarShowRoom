@@ -63,4 +63,4 @@ src/
 Якщо є питання по проекту — звертайтесь:
 
 - GitHub: [@Nickkklll](https://github.com/Nickkklll)
-- Email: your@email.com
+- Email: frostkolin@gmail.com
