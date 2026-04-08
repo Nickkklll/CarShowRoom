@@ -44,32 +44,36 @@ export default function CarDetailInline({ car, onBack }) {
 
   const allReviews = [...(car.reviews || []), ...localReviews]
 
-  const handleSubmit = () => {
-    const noRating  = rating === 0
-    const noComment = !comment.trim()
-    if (noRating) {
-      setShakeStars(true)
-      setTimeout(() => setShakeStars(false), 1000)
-    }
-    if (noComment) setEmptyField(true)
-    if (noRating || noComment) return
-
-    const newReview = {
-      id: Date.now(),
-      reviewerName: 'Ви',
-      comment: comment.trim(),
-      rating,
-      date: new Date().toISOString(),
-      isOwn: true,
-    }
-    const updated = [...localReviews, newReview]
-    setLocalReviews(updated)
-    try { localStorage.setItem(`reviews_${car.id}`, JSON.stringify(updated)) } catch {}
-    setComment('')
-    setRating(0)
-    formRef.current?.classList.remove('review-form--open')
-    setTimeout(() => setShowForm(false), 400)
+ const handleSubmit = () => {
+  const noRating  = rating === 0
+  const noComment = !comment.trim()
+  if (noRating) {
+    setShakeStars(true)
+    setTimeout(() => setShakeStars(false), 1000)
   }
+  if (noComment) setEmptyField(true)
+  if (noRating || noComment) return
+
+  const newReview = {
+    id: Date.now(),
+    reviewerName: 'Ви',
+    comment: comment.trim(),
+    rating,
+    date: new Date().toISOString(),
+    isOwn: true,
+  }
+  const updated = [...localReviews, newReview]
+  setLocalReviews(updated)
+  try { localStorage.setItem(`reviews_${car.id}`, JSON.stringify(updated)) } catch {}
+  setComment('')
+  setRating(0)
+
+ 
+  formRef.current?.classList.remove('review-form--open')
+  setTimeout(() => setShowForm(false), 400)
+  
+  setIsPopupOpen(false)
+}
 
   const handleDelete = (id) => {
     const updated = localReviews.filter(r => r.id !== id)
