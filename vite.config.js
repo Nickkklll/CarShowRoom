@@ -4,6 +4,7 @@ import path from 'path'
 
 
 export default defineConfig({
+  base: '/CarShowRoom/',
   plugins: [
     react(),
   ],
@@ -13,7 +14,7 @@ export default defineConfig({
       '@':path.resolve(__dirname,'./src'),
     },
   },
-
+  
   css:{
     preprocessorOptions:{
       scss:{
