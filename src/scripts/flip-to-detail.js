@@ -154,7 +154,7 @@ export function flyToDetail(car, setSelectedCar) {
       setTimeout(() => {
         
         
-    // clone.remove();
+    clone.remove();
         
       }, 500);
 
