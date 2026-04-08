@@ -7,7 +7,7 @@ import '@/styles/main.scss'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/CarShowRoom">
       <App />
     </BrowserRouter>
   </StrictMode>,
