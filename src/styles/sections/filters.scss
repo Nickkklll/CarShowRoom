@@ -1,0 +1,250 @@
+@use '../global/vars' as *;
+.filters__block{
+  top: 0px;
+    z-index: 1;
+    background: $bg-card;
+    position: sticky;
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid $color-border;
+    color: $color-text-primary;
+    text-align: start;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 550px;
+    box-shadow: 0px 1px 11px 0px #000;
+    opacity: 1;
+      visibility: visible;
+    &__label{
+      @include font-heading (24px,400)
+    }
+
+    @media(max-width:992px){
+      display: none;
+    }
+
+    
+
+}
+
+.filter__burger{
+  
+  top: 0px;
+    z-index:4;
+    background: $bg-card;
+    position: fixed;
+    
+    width: 310px;
+    transform: translateX(-103%);
+    border: 1px solid $color-border;
+    color: $color-text-primary;
+    text-align: start;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    box-shadow: 0px 1px 11px 0px #000;
+    opacity: 0;
+      visibility: hidden;
+      transition: transform .3s ease-in-out;
+    @media(max-width:992px){
+opacity: 1;
+      visibility: visible;
+    }
+    &__label{
+      @include font-heading (24px,400)
+    }
+
+    .price-range{
+      h3{
+        margin-bottom: 10px;
+      }
+    }
+}
+.tags__block{
+  margin-top: 10px;
+  width: 100%;
+  text-align: end;
+}
+.filter__burger--open {
+  transform: translate(0%);
+}
+.open__filter-btn{
+  display: none;
+  
+ 
+  justify-content: space-between;
+  gap: 5px;
+  padding: 5px 15px;
+  border-radius: 10px; 
+background: #1A1D21;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #2D3239;
+    transition: color 0.01s ease;
+  @include font-heading(14px,300,$color-text-secondary);
+  svg{
+    width: 14px;
+    height: 14px;
+    
+  }
+  &:active{
+    color: $color-text-primary;
+  }
+
+  @media(max-width:992px){
+    display: inline-flex;
+  }
+  
+}
+.search__block{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.close__btn{
+  position: absolute;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+
+  svg{
+    width: 100%;
+    height: 100%;
+    transition: transform 0.1s ease-in;
+  }
+
+  &:hover{
+    svg{
+      transform: scale(1.3);
+    }
+  }
+}
+.price-range {
+  width: 100%;
+
+  &__labels {
+
+    span{
+        @include font-body-light(18px, 600);
+    }
+    margin-bottom: 8px;
+    input{
+        @include font-body-light(18px, 600);
+        background: $bg-main;
+        border: none;
+        border-radius: 3px;
+        text-align: center;
+        width: 80px;
+        &:focus-visible{
+            outline: 1px solid $color-border;
+  outline-offset: 0;
+        }
+        &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  // Firefox
+  -moz-appearance: textfield;
+    }
+}
+
+  &__track {
+    position: relative;
+    margin-top: 20px;
+    height: 4px;
+    background: linear-gradient(
+    to right,
+    $color-border 0%,
+    $color-border var(--min),
+    $color-button var(--min),
+    $color-button var(--max),
+    $color-border var(--max),
+    $color-border 100%
+  );
+    border-radius: 2px;
+  }
+
+  &__input {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 4px;
+    background: none;
+    appearance: none;
+    pointer-events: none;
+
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: $color-text-primary;
+      pointer-events: all;
+      cursor: pointer;
+    }
+  }
+}
+
+.filter__label{
+    @include font-heading( 20px, 500);
+}
+
+#search{
+    background: $bg-card;
+    border: 1px solid $color-border;
+    border-radius: 3px;
+    @include font-heading (16px,500);
+    padding: 10px;
+}
+.filters__types{
+  width: 100%;
+  display: grid;
+  gap: 50px 30px;
+  grid-template-columns: repeat(3,1fr);
+}
+.filters__type-btn {
+  width: 70px;
+  height: 70px;
+  padding:10px;
+  border: 1px solid $color-border;
+  border-radius: 20px;
+  color: $color-text-secondary;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+  position: relative;
+
+  
+  
+  svg{
+    width: 100%;
+    height: 100%;
+  }
+  span{
+    position: absolute;
+    width: 100%;
+    top: 120%;
+    left: 0;
+  }
+  &:hover {
+    border-color: #598ef9;
+    color: #598ef9;
+  }
+
+  &--active {
+    background: #598ef90a;
+   border-color: #598ef9;
+    color: #598ef9;
+    box-shadow: inset 1px 1px 6px 0px #598ef9;
+  }
+}

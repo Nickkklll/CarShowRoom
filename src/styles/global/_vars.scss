@@ -1,0 +1,112 @@
+
+
+
+
+//=======COLOR======//
+
+
+$bg-main:#0F1113;
+$bg-card:#1A1D21;
+$color-accent:#C5A059;
+$color-text-primary:#FFFFFF;
+$color-text-secondary:#9CA3AF;
+$color-border:#2D3239;
+$color-button:#1E69FF;
+
+//======Fonts=====//
+
+@font-face{
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('@/assets/fonts/inter-v20-cyrillic_latin-regular.woff2') format('woff2');
+ }
+
+ @font-face{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('@/assets/fonts/inter-v20-cyrillic_latin-500.woff2') format('woff2');
+ }
+
+  @font-face{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('@/assets/fonts/inter-v20-cyrillic_latin-600.woff2') format('woff2');
+ }
+
+  @font-face{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('@/assets/fonts/inter-v20-cyrillic_latin-700.woff2') format('woff2');
+ }
+
+  @font-face{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('@/assets/fonts/inter-v20-cyrillic_latin-800.woff2') format('woff2');
+ }
+
+  @font-face{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('@/assets/fonts/inter-v20-cyrillic_latin-900.woff2') format('woff2');
+ }
+
+ @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('@/assets/fonts/Montserrat-Light.woff2') format('woff2');
+ 
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('@/assets/fonts/Montserrat-Medium.woff2') format('woff2');
+}
+
+
+
+
+
+@mixin font-heading($size: 2.5rem, $weight: 400, $color:#fff) {
+  font-family: 'Inter', serif;
+  font-weight: $weight; 
+  font-size: $size;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: $color; 
+}
+
+@mixin font-body-light($size: 1rem,$weight:300,$color:#fff) {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: $weight; 
+  font-size: $size;
+  line-height: 1.6;
+  color: #E0E0E0;
+}
+
+
+@mixin font-accent($size: 0.875rem, $weight:500,$color:#fff) {
+  font-family: 'Montserrat', sans-serif;
+  font-weight:$weight; 
+  font-size: $size;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $color;
+}
